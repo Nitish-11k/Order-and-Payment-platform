@@ -30,4 +30,10 @@ public class ProcessedEvent {
     @Column(name = "processed_at", nullable = false, updatable = false)
     @Builder.Default
     private Instant processedAt = Instant.now();
+
+    public ProcessedEvent(ProcessedEventId id, String eventType) {
+        this.id = id;
+        this.eventType = eventType;
+        this.processedAt = Instant.now();
+    }
 }
